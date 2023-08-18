@@ -9,4 +9,4 @@ app.get("", (req, res) => {
     res.render("index");
 });
 
-app.listen(5044)
+app.listen(3000)
