@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Heebo&family=Space+Mono&display=swap');
+
 .msg {
     background-color: rgb(25, 34, 59);
     background-color: rgba(30, 38, 59, 0.952);
@@ -6,6 +8,7 @@
     border-radius: 10px;
     padding: 8px;
     margin-bottom: 10px;
+    font-family: 'Heebo', sans-serif;
 }
 
 .msg p {
@@ -16,7 +19,8 @@
 .msg .msg-sender-txt {
     color: rgb(45, 88, 82);
     font-size: larger;
-    margin: 5px
+    margin: 5px;
+    font-weight: bold;
 }
 
 .msg .msg-txt {
