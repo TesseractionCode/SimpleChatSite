@@ -23,15 +23,26 @@ function submitMessageGlobal(msg_object) {
     fetch("/submit-message", options);
 }
 
-function updateCurrentMessages() {
+var last_message_time;
 
+function updateCurrentMessages() {
+    
     fetch("/get-current-messages").then(res => {
         var last_scroll_top = chat_box.scrollTop
         original_html = chat_box.innerHTML;
-        chat_box.innerHTML = "";
         res.json().then(msg_objects => {
             for (i in msg_objects) {
                 const msg_object = msg_objects[i];
+
+                // skip if this message object is already acquired
+                if (last_message_time) {
+                    if (last_message_time >= msg_object.time) {
+                        continue;
+                    }
+                }
+
+                last_message_time = msg_object.time;
+
                 chat_box.innerHTML += `
                     <div class="msg">
                         <p class="msg-sender-txt">${msg_object.username}:</p>

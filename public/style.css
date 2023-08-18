@@ -16,6 +16,10 @@
     background-clip: content-box;
 }
 
+html {
+    
+}
+
 body {
     display: flex;
     justify-content: center;
