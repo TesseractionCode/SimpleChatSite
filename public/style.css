@@ -1,0 +1,97 @@
+:root {
+    --primary-color-dark: rgb(136, 187, 178);
+    --primary-color: rgb(199, 235, 227);
+    --primary-color-light: rgb(231, 241, 243);
+    --border-width: 25px;
+}
+
+::-webkit-scrollbar {
+    width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgb(114, 156, 147);
+    border-radius: 20px;
+    border: 6px solid transparent;
+    background-clip: content-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    background-color: var(--primary-color-dark);
+    height: 100vh;
+}
+
+.container {
+    background-color: var(--primary-color);
+    width: calc(100% - 2 * var(--border-width));
+    height: calc(100% - 2 * var(--border-width));
+    border-radius: 5px;
+    overflow: hidden;
+
+    display: flex;
+    flex-direction: column;
+}
+
+#control-panel {
+    background-color: rgb(55, 65, 62);
+    flex: 0 1 90px;
+    color: rgba(238, 255, 249, 0.952);
+    display: flex;
+    flex-direction: column;
+}
+
+#chat-box {
+    flex: 1 1 auto;
+    padding: 10px;
+    padding-bottom: 0;
+    background-image: linear-gradient(to bottom, rgb(199, 235, 227), rgb(160, 201, 192));
+    background-color: color;
+    overflow-y: scroll;
+    
+    border-radius: 5px;
+}
+
+#control-panel .upper-container {
+    flex: 1 1 auto;
+}
+
+#control-panel .lower-container {
+    flex: 0 1 60%;
+}
+
+#control-panel .upper-container textarea {
+    resize: none;
+    height: 100%;
+    border-radius: 4px;
+    background-color: rgba(226, 238, 234, 0.952);
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+#control-panel .lower-container textarea {
+    background-color: rgba(238, 255, 249, 0.952);
+    font-size: large;
+    resize: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+}
+
+#control-panel .upper-container #send-button {
+    border: none;
+    background-color: transparent;
+    
+    color: rgb(206, 236, 234);
+    float: right;
+    margin: 3px;
+    margin-right: 0px;
+}
+
+#control-panel .upper-container #send-button:active {
+    color: rgb(145, 192, 188);
+}
